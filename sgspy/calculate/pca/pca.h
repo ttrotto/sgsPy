@@ -262,8 +262,8 @@ calculatePCA(
 
 			//remove nodata values
 			int nFeatures = 0;
-			for (int x = 0; x < xValid; x++) {
-				for (int y = 0; y < yValid; y++) {
+			for (int y = 0; y < yValid; y++) {
+				for (int x = 0; x < xValid; x++) {
 					bool isNan = false;
 					for (int b = 0; b < bandCount; b++) {
 						T val = p_data[((y * xBlockSize) + x) * bandCount + b];
