@@ -678,11 +678,11 @@ rasterBandIO(
 			xValid,
 			yValid,
 			p_buffer,
-			xBlockSize,
-			yBlockSize,
+			xValid,		//buffer size must equal the window size, otherwise GDAL resamples
+			yValid,
 			band.type,
-			0,
-			0
+			band.size,
+			static_cast<GSpacing>(band.size) * xBlockSize	//rows in the buffer stay xBlockSize wide, like ReadBlock()
 		);
 	}
 	if (threaded) {
