@@ -271,7 +271,7 @@ def strat(
         if weights is None:
             raise ValueError("for manual allocation, weights must be given.")
 
-        if np.sum(weights) != 1:
+        if not np.isclose(np.sum(weights), 1):
             raise ValueError("weights must sum to 1.")
 
         if len(weights) != num_strata:
