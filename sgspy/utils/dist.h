@@ -63,7 +63,7 @@ findMinMax(
 			rasterBandIO(band, p_data, band.xBlockSize, band.yBlockSize, xBlock, yBlock, xValid, yValid, true, true);
 
 			for (int y = 0; y < yValid; y++) {
-				int index = y * width;
+				int index = y * band.xBlockSize;
 				for (int x = 0; x < xValid; x++) {
 					T val = reinterpret_cast<T *>(p_data)[index];
 					if (val != nan && !std::isnan(val)) {
@@ -195,7 +195,7 @@ populationDistribution(
 			rasterBandIO(band, p_data, band.xBlockSize, band.yBlockSize, xBlock, yBlock, xValid, yValid, true, true);
 
 			for (int y = 0; y < yValid; y++) {
-				int index = y * width;
+				int index = y * band.xBlockSize;
 				for (int x = 0; x < xValid; x++) {
 					T val = reinterpret_cast<T *>(p_data)[index];
 
