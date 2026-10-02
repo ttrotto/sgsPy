@@ -142,7 +142,7 @@ raster::GDALRasterWrapper *map(
 
 		double *checkGeotransform = rasters[i]->getGeotransform();
 		for (int j = 0; j < 6; j++) {
-			if (geotransform[i] != checkGeotransform[i]) {
+			if (geotransform[j] != checkGeotransform[j]) {
 				std::string err = "raster with index " + std::to_string(i) + " has a different geotransform from the raster at index 0.";
 				throw std::runtime_error(err);
 			}
