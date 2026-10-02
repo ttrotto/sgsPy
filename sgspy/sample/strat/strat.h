@@ -28,6 +28,26 @@ namespace strat {
 
 /**
  * @ingroup strat
+ * Throws if a (non-nodata) strat raster value is outside of [0, numStrata).
+ *
+ * @param T val
+ * @param int numStrata
+ */
+template <typename T>
+inline void
+checkStrataValue(T val, int numStrata) {
+	if (val >= numStrata) {
+		throw std::runtime_error("the num_strata indicated for the strat raster band is less than or equal to one of the values in that band.");
+	}
+
+	if (val < 0) {
+		std::string errmsg = "a negative value of " + std::to_string(val) + " was found in the strat raster, and has not been marked as a nodata value.";
+		throw std::runtime_error(errmsg);
+	}
+}
+
+/**
+ * @ingroup strat
  * Helper function which calculates the count of values for each strata
  * depending on the allocation method.
  *
@@ -48,6 +68,10 @@ calculateAllocation(
 	std::vector<int64_t> retval;
 	int64_t remainder = numSamples;
 	int64_t numStrata = strataCounts.size();
+	if (numPixels == 0 || numStrata == 0) {
+		throw std::runtime_error("stratification raster has no valid (non-nodata) pixels or strata to sample from.");
+	}
+
 	if (allocation == "prop") {
 		//allocate the samples per stratum according to stratum size
 		int64_t pixelsPerSample = numPixels / numSamples;
@@ -512,14 +536,7 @@ processBlocksStratRandom(
 						continue;
 					}
 
-					if (val >= numStrata) {
-						throw std::runtime_error("the num_strata indicated for the strat raster band is less than or equal to one of the value sin that band.");
-					}
-
-					if (val < 0) {
-						std::string errmsg = "a negative value of " + std::to_string(val) + " was found in the strat raster, and has not been marked as a nodata value.";
-						throw std::runtime_error(errmsg);
-					}
+					checkStrataValue(val, numStrata);
 
 					//update optim allocation variance calculations
 					if (optim.used) {
@@ -890,6 +907,8 @@ processBlocksStratQueinnec(
 					continue;
 				}
 
+				checkStrataValue(val, numStrata);
+
 				//update optim allocation variance calculations
 				if (optim.used) {
 					optim.update(y * width + x, val);
@@ -925,6 +944,8 @@ processBlocksStratQueinnec(
 				if (isNan) {
 					continue;
 				}
+
+				checkStrataValue(val, numStrata);
 
 				//update optim allocation variance calculations
 				if (optim.used) {
@@ -1026,6 +1047,8 @@ processBlocksStratQueinnec(
 				if (isNan) {
 					continue;
 				}
+
+				checkStrataValue(val, numStrata);
 
 				//update optim allocation variance calculations
 				if (optim.used) {
