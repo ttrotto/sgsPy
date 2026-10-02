@@ -93,6 +93,7 @@ $(function(){initNavTree('index.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<p><a href="https://pypi.org/project/sgsPy"><img src="https://img.shields.io/pypi/dm/sgsPy" alt="Downloads" class="inline"/></a></p>
 <p>sgsPy is a toolbox package of stratification and sampling methods for use on ALS metrics, designed to be fast and efficient on very large raster images.</p>
 <ul>
 <li><b>Documentation:</b> <a href="https://jbmeyer2001.github.io/sgsPy/">https://jbmeyer2001.github.io/sgsPy/</a></li>
@@ -105,10 +106,11 @@ Installation</h1>
 <div class="fragment"><div class="line">pip install sgspy </div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Overview</h1>
-<p><span class="tt">sgsPy</span> is based on the widely-used <span class="tt">sgsR</span> package, intended originally to help develop representative ground sample networks using auxiliary information like ALS data. <span class="tt">sgsPy</span> takes much of the existing functionality of the R package and improves upon it's performance, allowing Python users to integrate structurally guided sampling approaches to their workflows.</p>
+<p><span class="tt">sgsPy</span> is based on the widely-used <span class="tt">sgsR</span> package, intended originally to help develop representative ground sample networks using auxiliary information like ALS data. <span class="tt">sgsPy</span> takes much of the existing functionality of the R package and improves upon its performance, allowing Python users to integrate structurally guided sampling approaches to their workflows.</p>
 <p>While the original intention for the package was to be used with ALS metrics, any form of raster data can be used in lieu of ALS metrics.</p>
 <p>If you encounter any bugs, unclear documentation, or have any feature ideas then please contribute by posting an issue. <a href="https://github.com/jbmeyer2001/sgsPy/issues">https://github.com/jbmeyer2001/sgsPy/issues</a></p>
 <p>The currently implemented functionality includes:</p><ul>
+<li><b>[calculating] <a href="https://jbmeyer2001.github.io/sgsPy/group__user__distribution.html">distribution</a></b></li>
 <li><b>[calculating] <a href="https://jbmeyer2001.github.io/sgsPy/group__user__pca.html">principal component analysis</a></b></li>
 <li><b>[sampling] <a href="https://jbmeyer2001.github.io/sgsPy/group__user__clhs.html">conditioned latin hypercube sampling</a></b></li>
 <li><b>[sampling] <a href="https://jbmeyer2001.github.io/sgsPy/group__user__srs.html">simple random sampling</a></b></li>
@@ -126,7 +128,7 @@ files</h2>
 <p>Some helpful files to get started with can be found in the <a href="https://github.com/jbmeyer2001/sgsPy/tree/main/tests/files">https://github.com/jbmeyer2001/sgsPy/tree/main/tests/files</a> folder. Specifically <a href="https://github.com/jbmeyer2001/sgsPy/blob/main/tests/files/mraster.tif">mraster.tif</a>, <a href="https://github.com/jbmeyer2001/sgsPy/blob/main/tests/files/inventory_polygons.shp">inventory_polygons.shp</a> along with its associated .dbf, .prj, and .shx files, <a href="https://github.com/jbmeyer2001/sgsPy/blob/main/tests/files/access.shp">access.shp</a> along with its associated .dbf, .prj, and .shx files, <a href="https://github.com/jbmeyer2001/sgsPy/blob/main/tests/files/existing.shp">existing.shp</a> along with its associated .dbf, .prj, and .shx files.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 raster and vector data</h2>
-<p>The two data structures used by the stratification, sampling, and calculating methods are the <span class="tt">sgspy.SpatialRaster</span> [<a href="https://jbmeyer2001.github.io/sgsPy/classsgs_1_1utils_1_1raster_1_1SpatialRaster.html">SpatialRaster documentation</a>] and <span class="tt">sgspy.SpatialVector</span> [<a href="https://jbmeyer2001.github.io/sgsPy/classsgs_1_1utils_1_1vector_1_1SpatialVector.html">SpatialVector documentation</a>]. The beginning of any process using the sgspy package will involve creating one or more of these data structurse. This can be done by providing a file path. It can also be done by converting from a data structure used by popular geospatial packages.</p>
+<p>The two classes used by the stratification, sampling, and calculating methods are the <span class="tt">sgspy.SpatialRaster</span> [<a href="https://jbmeyer2001.github.io/sgsPy/classsgs_1_1utils_1_1raster_1_1SpatialRaster.html">SpatialRaster documentation</a>] and <span class="tt">sgspy.SpatialVector</span> [<a href="https://jbmeyer2001.github.io/sgsPy/classsgs_1_1utils_1_1vector_1_1SpatialVector.html">SpatialVector documentation</a>]. The beginning of any process using the sgspy package will involve creating an instance of one or more of these classes. This can be done by providing a file path. It can also be done by converting an object from a popular geospatial package.</p>
 <div class="fragment"><div class="line">import sgspy</div>
 <div class="line"> </div>
 <div class="line">#creating SpatialRaster and SpatialVector using file paths</div>
@@ -167,7 +169,7 @@ example</h2>
 <div class="line">pca = sgspy.calculate.pca(rast, num_comp=2)</div>
 <div class="line"> </div>
 <div class="line"># stratifiy the two components into 5 equally sized quantiles, and map the two layers into a single mapped output</div>
-<div class="line">srast = sgspy.stratify.quantiles(pca, num_strata={&quot;comp_1&quot;:5, &quot;comp2&quot;:5}, map=True)</div>
+<div class="line">srast = sgspy.stratify.quantiles(pca, quantiles={&quot;comp_1&quot;:5, &quot;comp2&quot;:5}, map=True)</div>
 <div class="line"> </div>
 <div class="line"># use stratified random sampling to sample each (of the 25 total) mapped strata proportional to it&#39;s number of pixels in the raster band</div>
 <div class="line"># additionaly, plot the output and write it to samples.shp</div>
@@ -235,7 +237,6 @@ Windows installation:</h2>
 </ol>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 How to run sgsPy:</h2>
-<p><b>NOTE: if you try to open a Python instance in the command prompt, or run a Python file residing in this project directory, there may be issues importing the project. This is because the folder name 'sgspy' is the same as the packages name, and the Python files rely on compiled binaries within the environment. This also means that the build command should be run before testing any new Python code written!</b></p>
 <p>Tests may be ran by running the following command from within the folder containing this file. Both pytest and geopandas must be installed to run the tests. </p><div class="fragment"><div class="line">pytest</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

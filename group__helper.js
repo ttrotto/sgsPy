@@ -4,6 +4,10 @@ var group__helper =
       [ "x", "structsgs_1_1helper_1_1Index.html#a40dfdffc1135dfb71166a5d66ee2676b", null ],
       [ "y", "structsgs_1_1helper_1_1Index.html#ab490a46a7689325093d244f9a9ec7f93", null ]
     ] ],
+    [ "sgs::helper::Field", "structsgs_1_1helper_1_1Field.html", [
+      [ "fname", "structsgs_1_1helper_1_1Field.html#adba8667b6530586797c3d28319e4276d", null ],
+      [ "fval", "structsgs_1_1helper_1_1Field.html#ab81fbcfed56c8a20828dd28ed3912a10", null ]
+    ] ],
     [ "sgs::helper::RasterBandMetaData", "structsgs_1_1helper_1_1RasterBandMetaData.html", [
       [ "name", "structsgs_1_1helper_1_1RasterBandMetaData.html#afb8e095c4f0b06277edf7c566dd30e6e", null ],
       [ "nan", "structsgs_1_1helper_1_1RasterBandMetaData.html#afb7af2cf7ef7d6973a5d06bdb5621a46", null ],
@@ -28,11 +32,15 @@ var group__helper =
     [ "sgs::helper::PointHash", "structsgs_1_1helper_1_1PointHash.html", [
       [ "operator()", "structsgs_1_1helper_1_1PointHash.html#a3cba6235c2cc1d7ff514cac630fffbf4", null ]
     ] ],
-    [ "sgs::helper::NeighborMap", "group__helper.html#ga04c6841cb69b3c6d7659fcbb074be606", null ],
+    [ "sgs::helper::NeighborMap", "group__helper.html#ga0180a4b6f7fe9d973c861a43819e2b19", null ],
     [ "sgs::helper::addBandToMEMDataset", "group__helper.html#ga91051fc558d9d5f5feae0fc8eead7ef3", null ],
     [ "sgs::helper::addBandToVRTDataset", "group__helper.html#ga5ea2521735fbd863424699063b757fd7", null ],
     [ "sgs::helper::addPoint", "group__helper.html#ga01ea9f048044df25b18ba0936cfc10cc", null ],
+    [ "sgs::helper::addPoint", "group__helper.html#ga5ecdcf394e5a8394b6291d2ff6026b68", null ],
+    [ "sgs::helper::addPoint", "group__helper.html#ga9086bd980ae91df374f5dc0cf9b84d44", null ],
     [ "sgs::helper::addPoint", "group__helper.html#gad9b163a0d424fce8f9d2c5744ac48754", null ],
+    [ "sgs::helper::addPoint", "group__helper.html#ga5a8dd1a9d5d971318ad3683605c46ff5", null ],
+    [ "sgs::helper::addPoint", "group__helper.html#gab19282af07519d1ed62cc787cafceb28", null ],
     [ "sgs::helper::createDataset", "group__helper.html#ga803cc5ba5d78e0c1ddb6c36cf0a94253", null ],
     [ "sgs::helper::createVirtualDataset", "group__helper.html#gad011bc1abc9e8fba449ca933ccec4898", null ],
     [ "sgs::helper::createVRTBandDataset", "group__helper.html#gace0e6c81d40358db47a4ef3f90a54204", null ],
@@ -42,6 +50,8 @@ var group__helper =
     [ "sgs::helper::point2index", "group__helper.html#gac3201c5b20c0eb30d8039ed3c1284d4b", null ],
     [ "sgs::helper::printTypeWarningsForInt32Conversion", "group__helper.html#gaaa47ccb56a071380c840029f71aef8e1", null ],
     [ "sgs::helper::rasterBandIO", "group__helper.html#ga1c4d72b3f0746579954ad713174c51b6", null ],
+    [ "sgs::helper::sample_to_point", "group__helper.html#ga8c28588e4655f055df73943b5540f21f", null ],
+    [ "sgs::helper::sample_to_point", "group__helper.html#ga286eeac1c49ac1df6b37b1d704ce5c3f", null ],
     [ "sgs::helper::setStrataPixelDependingOnType", "group__helper.html#ga8c6740d2de7f4a24ba4784ed92ad2ca0", null ],
     [ "sgs::helper::setStratBandTypeAndSize", "group__helper.html#gafb4301348d605db2ce92d141063af00b", null ]
 ];

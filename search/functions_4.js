@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['existing_0',['Existing',['../structsgs_1_1existing_1_1Existing.html#af2343b80b294e70887a6dd3fc797aa6b',1,'sgs::existing::Existing']]]
+  ['dist_0',['dist',['../group__dist.html#gab6678095fe61063e6506650f008d7b4a',1,'sgs::dist']]],
+  ['distribution_1',['distribution',['../group__user__distribution.html#gab35744765ea8883a88f6a4e3ab94ff05',1,'sgspy::calculate::distribution::distribution']]]
 ];

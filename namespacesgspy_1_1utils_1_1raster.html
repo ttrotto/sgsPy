@@ -97,12 +97,13 @@ $(function(){initNavTree('namespacesgspy_1_1utils_1_1raster.html','',''); });
 Classes</h2></td></tr>
 <tr class="memitem:SpatialRaster" id="r_SpatialRaster"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsgspy_1_1utils_1_1raster_1_1SpatialRaster.html">SpatialRaster</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents a spatial raster, and is used as an input to many sgs functions.  <a href="classsgspy_1_1utils_1_1raster_1_1SpatialRaster.html#details">More...</a><br /></td></tr>
+<tr class="memitem:StratRasterBandMetadata" id="r_StratRasterBandMetadata"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsgspy_1_1utils_1_1raster_1_1StratRasterBandMetadata.html">StratRasterBandMetadata</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ab4dabcfbc7773b9f2f82a07da51c5aa8" id="r_ab4dabcfbc7773b9f2f82a07da51c5aa8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4dabcfbc7773b9f2f82a07da51c5aa8">RASTERIO</a> = True</td></tr>
 <tr class="memitem:afbebdb9c364441db71c3ab5312535520" id="r_afbebdb9c364441db71c3ab5312535520"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbebdb9c364441db71c3ab5312535520">GDAL</a> = True</td></tr>
-<tr class="memitem:abf6b52825c179e27e4ee3ef14372c6b9" id="r_abf6b52825c179e27e4ee3ef14372c6b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf6b52825c179e27e4ee3ef14372c6b9">PROJDB_PATH</a> = os.path.join(sys.prefix, &quot;sgspy&quot;)</td></tr>
+<tr class="memitem:abf6b52825c179e27e4ee3ef14372c6b9" id="r_abf6b52825c179e27e4ee3ef14372c6b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf6b52825c179e27e4ee3ef14372c6b9">PROJDB_PATH</a> = os.environ[&quot;SGSPY_PROJDB_PATH&quot;]</td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="afbebdb9c364441db71c3ab5312535520" name="afbebdb9c364441db71c3ab5312535520"></a>
@@ -126,7 +127,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sgspy.utils.raster.PROJDB_PATH = os.path.join(sys.prefix, &quot;sgspy&quot;)</td>
+          <td class="memname">sgspy.utils.raster.PROJDB_PATH = os.environ[&quot;SGSPY_PROJDB_PATH&quot;]</td>
         </tr>
       </table>
 </div><div class="memdoc">
