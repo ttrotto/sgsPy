@@ -1320,6 +1320,10 @@ strat(
 
 	OptimAllocationDataManager optim(p_mraster, mrastBandNum, allocation);
 
+	if (band.type != GDT_Int8 && band.type != GDT_Int16 && band.type != GDT_Int32) {
+		throw std::runtime_error("strat raster band data type " + std::string(GDALGetDataTypeName(band.type)) + " is not supported, it must be one of Int8, Int16, or Int32.");
+	}
+
 	std::vector<int64_t> strataSampleCounts; 
 	if (method == "random") {
 		switch (band.type) {
@@ -1335,7 +1339,7 @@ strat(
 							 			      multiplier, rng, allocation, optim,
 										      weights, width, height);
 				break;
-			default:
+			case GDT_Int32:
 				strataSampleCounts = processBlocksStratRandom<int32_t>(numSamples, numStrata, band, access, 
 										      existing, indices, existingSamples,
 							 			      multiplier, rng, allocation, optim,
@@ -1357,7 +1361,7 @@ strat(
 							   				multiplier, queinnecMultiplier, rng, allocation, 
 											optim, weights, width, height);
 				break;
-			default:
+			case GDT_Int32:
 				strataSampleCounts = processBlocksStratQueinnec<int32_t>(numSamples, numStrata, band, access, existing, 
 											indices, queinnecIndices, fw, existingSamples,
 							   				multiplier, queinnecMultiplier, rng, allocation, 
