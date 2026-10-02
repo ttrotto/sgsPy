@@ -931,7 +931,7 @@ quantiles(
 
 			int xBlocks = (p_raster->getWidth() + xBlockSize - 1) / xBlockSize;
 			int yBlocks = (p_raster->getHeight() + yBlockSize - 1) / yBlockSize;
-			int chunkSize = yBlocks / threadCount;
+			int chunkSize = std::max(1, (yBlocks + threadCount - 1) / threadCount);
 
 			for (int yBlockStart = 0; yBlockStart < yBlocks; yBlockStart += chunkSize) {
 				int yBlockEnd = std::min(yBlockStart + chunkSize, yBlocks);
@@ -1046,7 +1046,7 @@ quantiles(
 					
 				int xBlocks = (p_raster->getWidth() + xBlockSize - 1) / xBlockSize;
 				int yBlocks = (p_raster->getHeight() + yBlockSize - 1) / yBlockSize;			
-				int chunkSize = yBlocks / threadCount;
+				int chunkSize = std::max(1, (yBlocks + threadCount - 1) / threadCount);
 				
 				for (int yBlockStart = 0; yBlockStart < yBlocks; yBlockStart += chunkSize) {
 					int yBlockEnd = std::min(yBlocks, yBlockStart + chunkSize);
