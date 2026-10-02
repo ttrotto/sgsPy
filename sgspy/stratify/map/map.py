@@ -267,7 +267,7 @@ def map(*args: tuple[SpatialRaster, int|str|list[int]|list[str], Optional[int|li
             band_size = height * width * pixel_size
             raster_size_bytes += band_size
             if band_size > GIGABYTE:
-                large_raster == True
+                large_raster = True
         
         #prepare cpp function arguments
         raster_list.append(raster.cpp_raster)
