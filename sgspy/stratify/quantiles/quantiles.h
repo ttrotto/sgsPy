@@ -80,7 +80,10 @@ void calcSPQuantiles(
 			fi ++;
 		}
 	}
-	filteredData.resize(fi + 1);
+	if (fi == 0) {
+		throw std::runtime_error("band contains only nodata values, cannot calculate quantiles.");
+	}
+	filteredData.resize(fi);
 
 	//define variables to pass to MKL quantiles calculation function
 	//https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2025-2/vslsseditquantiles.html
@@ -147,7 +150,10 @@ void calcDPQuantiles(
 			fi ++;
 		}
 	}
-	filteredData.resize(fi + 1);
+	if (fi == 0) {
+		throw std::runtime_error("band contains only nodata values, cannot calculate quantiles.");
+	}
+	filteredData.resize(fi);
 
 	//define variables to pass to MKL quantiles calculation function
 	//https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2025-2/vslsseditquantiles.html
