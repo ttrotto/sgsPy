@@ -228,7 +228,7 @@ class CLHSDataManager {
 		//resize existing sample vectors 
 		this->ex.resize(this->ecount);
 		this->ey.resize(this->ecount);
-		this->features.resize(this->ecount * nFeat);
+		this->efeatures.resize(this->ecount * nFeat);
 	}
 
 	/**
