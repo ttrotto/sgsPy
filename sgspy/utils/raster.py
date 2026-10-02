@@ -318,10 +318,10 @@ class SpatialRaster:
             raise RuntimeError("the C++ object which this class wraps has been cleaned up and closed.")
 
         if ax is not None:
-            plot_raster(self, ax, target_width, target_width, band, **kwargs)
+            plot_raster(self, ax, target_width, target_height, band, **kwargs)
         else:
             fig, ax = plt.subplots()
-            plot_raster(self, ax, target_width, target_width, band, **kwargs)
+            plot_raster(self, ax, target_width, target_height, band, **kwargs)
             plt.show()
        
     @classmethod
