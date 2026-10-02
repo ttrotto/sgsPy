@@ -11,19 +11,14 @@
 # @defgroup user_srs srs
 # @ingroup user_sample
 
-import os
-import sys
-import site
 import tempfile
 from typing import Optional
 
-import numpy as np
 import matplotlib.pyplot as plt
 
 from sgspy.utils import (
     SpatialRaster,
     SpatialVector,
-    plot,
 )
 
 from _sgs import srs_cpp

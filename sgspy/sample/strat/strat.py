@@ -11,9 +11,6 @@
 # @defgroup user_strat strat
 # @ingroup user_sample
 
-import os
-import sys
-import site
 import tempfile
 from typing import Optional
 
@@ -23,8 +20,6 @@ import matplotlib.pyplot as plt
 from sgspy.utils import(
     SpatialRaster,
     SpatialVector,
-    StratRasterBandMetadata,
-    plot,
 )
 
 from _sgs import strat_cpp

@@ -11,18 +11,13 @@
 # @defgroup user_systematic systematic
 # @ingroup user_sample
 
-import os
-import sys
-import site
 from typing import Optional
 
-import numpy as np
 import matplotlib.pyplot as plt
 
 from sgspy.utils import (
     SpatialRaster,
     SpatialVector,
-    plot,
 )
 
 from _sgs import systematic_cpp

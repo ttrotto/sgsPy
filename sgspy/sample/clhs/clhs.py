@@ -11,20 +11,15 @@
 # @defgroup user_clhs clhs
 # @ingroup user_sample
 
-import os
-import sys
-import site
 import tempfile
 from typing import Optional
 import warnings
 
-import numpy as np
 import matplotlib.pyplot as plt
 
 from sgspy.utils import (
     SpatialRaster,
     SpatialVector,
-    plot,
 )
 
 from _sgs import clhs_cpp
