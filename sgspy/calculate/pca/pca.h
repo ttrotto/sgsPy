@@ -314,7 +314,7 @@ calculatePCA(
 
 		retval.eigenvectors[i].resize(eigCols);
 		for (int64_t j = 0; j < eigCols; j++) {
-			retval.eigenvectors[i][j] = static_cast<T>(eigValBlock[i * eigCols + j]);
+			retval.eigenvectors[i][j] = static_cast<T>(eigVecBlock[i * eigCols + j]);
 		}
 	}
 	
