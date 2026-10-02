@@ -159,7 +159,7 @@ raster::GDALRasterWrapper *map(
 	std::vector<helper::RasterBandMetaData> stratBands;
 	std::vector<int> numStrataPerBand;	
 	helper::RasterBandMetaData mapBand;
-	std::vector<helper::VRTBandDatasetInfo> VRTBandInfo(1);
+	std::vector<helper::VRTBandDatasetInfo> VRTBandInfo;
 
 	bool isMEMDataset = !largeRaster && filename == "";
 	bool isVRTDataset = largeRaster && filename == "";
