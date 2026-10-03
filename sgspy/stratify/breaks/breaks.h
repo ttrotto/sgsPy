@@ -383,7 +383,6 @@ raster::GDALRasterWrapper *breaks(
 
 	//iterate through all pixels and update the stratified raster bands
 	if (largeRaster) {
-		pybind11::gil_scoped_acquire acquire;
 		boost::asio::thread_pool pool(threads);
 
 		if (map) {
@@ -577,7 +576,6 @@ raster::GDALRasterWrapper *breaks(
 			}
 		}
 		pool.join();
-		pybind11::gil_scoped_release release;
 	}
 	else {
 		size_t pixelCount = static_cast<size_t>(p_raster->getWidth()) * static_cast<size_t>(p_raster->getHeight());

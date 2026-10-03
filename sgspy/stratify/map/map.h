@@ -257,7 +257,6 @@ raster::GDALRasterWrapper *map(
 	}
 
 	if (largeRaster) {
-		pybind11::gil_scoped_acquire acquire;
 		boost::asio::thread_pool pool(threadCount);
 
 		int xBlockSize = stratBands[0].xBlockSize;
@@ -371,7 +370,6 @@ raster::GDALRasterWrapper *map(
 		}
 		
 		pool.join();
-		pybind11::gil_scoped_release release;
 	}
 	else {
 		std::vector<int> intNoDataValues(bandCount);

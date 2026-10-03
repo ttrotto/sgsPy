@@ -873,7 +873,6 @@ quantiles(
 
 	std::vector<std::vector<double>> quantiles(probabilities.size());
 	if (largeRaster) {
-		pybind11::gil_scoped_acquire acquire;
 		boost::asio::thread_pool pool(threadCount); 
 	
 		//initialize synchronization variables
@@ -1133,7 +1132,6 @@ quantiles(
 
 		pool.join();
 		VSIFree(quantilesCalculated);
-		pybind11::gil_scoped_release release;
 	}
 	else {
 		//call quantiles calculation fuction depending on type
