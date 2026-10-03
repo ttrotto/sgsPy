@@ -1075,10 +1075,8 @@ quantiles(
 						p_calculated
 					] {
 						std::unique_lock lock(*p_mutex);
-
-						if (!(*p_calculated)) {
-							p_cv->wait(lock);
-						}
+						p_cv->wait(lock, [p_calculated] { return *p_calculated; });
+						lock.unlock();
 
 						void *p_data = VSIMalloc3(xBlockSize, yBlockSize, p_dataBand->size);
 						void *p_strat = VSIMalloc3(xBlockSize, yBlockSize, p_stratBand->size);
