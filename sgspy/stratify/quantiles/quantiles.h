@@ -883,7 +883,7 @@ quantiles(
 
 		//call batch processing quantiles function depending on data type
 		for (int i = 0; i < bandCount; i++) {
-			helper::RasterBandMetaData band = dataBands[i];
+			helper::RasterBandMetaData& band = dataBands[i];
 			quantiles[i].resize(probabilities[i].size());
 			quantilesCalculated[i] = false;
 			if (band.type != GDT_Float64) {
