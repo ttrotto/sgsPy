@@ -29,6 +29,11 @@ strat_poly_test2_r_path = os.path.join(folder, 'strat_poly_test2_R.tif')
 
 pca_result_path = os.path.join(folder, 'pca_result.tif')
 
+#regression fixtures, generated from mraster_small.tif
+mraster_small_tiled_neg_path = os.path.join(folder, 'mraster_small_tiled_neg.tif') #-(zq90 + 1), strictly negative, 64x64 tiles (partial edge tiles)
+mraster_small_shifted_path = os.path.join(folder, 'mraster_small_shifted.tif') #origin shifted one pixel east
+nodata_only_path = os.path.join(folder, 'nodata_only.tif') #16x16, every pixel nodata
+
 __all__ = [
     'access_shapefile_path',
     'existing_shapefile_path',
@@ -54,4 +59,7 @@ __all__ = [
     'strat_poly_test1_r_path',
     'strat_poly_test2_r_path',
     'pca_result_path',
+    'mraster_small_tiled_neg_path',
+    'mraster_small_shifted_path',
+    'nodata_only_path',
 ]
