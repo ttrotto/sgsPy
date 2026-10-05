@@ -12,6 +12,7 @@
  * @ingroup sample
  */
 
+#include <cstdint>
 #include <iostream>
 #include <random>
 
@@ -256,7 +257,8 @@ systematic(
 	double buffOuter,
 	bool force,
 	bool plot,
-	std::string filename)
+	std::string filename,
+    uint64_t random_state)
 {
 	GDALAllRegister();
 	
@@ -276,10 +278,9 @@ systematic(
 	double xDiff = xMax - xMin;
 	double yDiff = yMax - yMin;
 	double rngMax = yDiff * xDiff;
-	std::mt19937::result_type seed = time(nullptr);
 	auto rng = std::bind(
 		std::uniform_real_distribution<double>(0, rngMax),
-		std::mt19937(seed)
+		std::mt19937_64(random_state)
 	);
 
 	//determine random rotation angle within extent polygon

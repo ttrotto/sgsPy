@@ -1201,7 +1201,8 @@ strat(
 	std::vector<std::pair<std::string, int>> mapStratMapping,
 	bool plot,
 	std::string filename,
-	std::string tempFolder)
+	std::string tempFolder,
+	uint64_t random_state)
 {
 	GDALAllRegister();
 
@@ -1290,7 +1291,7 @@ strat(
 
 	//fast random number generator using xoshiro256++
 	//https://vigna.di.unimi.it/ftp/papers/ScrambledLinear.pdf
-	xso::xoshiro_4x64_plus rng; 
+	xso::xoshiro_4x64_plus rng(random_state); 
 	uint64_t multiplier = helper::getProbabilityMultiplier(
 		width, 
 		height, 

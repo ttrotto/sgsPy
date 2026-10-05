@@ -174,7 +174,9 @@ PYBIND11_MODULE(_sgs, m) {
 		pybind11::arg("mapStratMapping"),
 		pybind11::arg("plot"),
 		pybind11::arg("filename"),
-		pybind11::arg("tempFolder"));
+		pybind11::arg("tempFolder"),
+	    pybind11::arg("random_state"));
+	
 
 	// source code in sgspy/sample/systematic/systematic.h
 	m.def("systematic_cpp", &sgs::systematic::systematic, pybind11::call_guard<pybind11::gil_scoped_release>(),
@@ -189,7 +191,8 @@ PYBIND11_MODULE(_sgs, m) {
 		pybind11::arg("buffOuter"),
 		pybind11::arg("force"),
 		pybind11::arg("plot"),
-		pybind11::arg("filename"));
+		pybind11::arg("filename"),
+		pybind11::arg("random_state"));
 
 	// source code in sgspy/stratify/breaks/breaks.h
 	m.def("breaks_cpp", &sgs::breaks::breaks, pybind11::call_guard<pybind11::gil_scoped_release>());
