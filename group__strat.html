@@ -101,12 +101,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga41ae47477f1d2286aa3d281046503803" id="r_ga41ae47477f1d2286aa3d281046503803"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ga41ae47477f1d2286aa3d281046503803 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga41ae47477f1d2286aa3d281046503803">sgs::strat::checkStrataValue</a> (T val, int numStrata)</td></tr>
 <tr class="memitem:ga599d1bfb91ba4394b453e04e35ce50a7" id="r_ga599d1bfb91ba4394b453e04e35ce50a7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga599d1bfb91ba4394b453e04e35ce50a7">sgs::strat::calculateAllocation</a> (int64_t numSamples, std::string allocation, std::vector&lt; int64_t &gt; strataCounts, std::vector&lt; double &gt; weights, int64_t numPixels)</td></tr>
 <tr class="memitem:ga36120d49fad818c08719bbbea9a60f88" id="r_ga36120d49fad818c08719bbbea9a60f88"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ga36120d49fad818c08719bbbea9a60f88 template"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga36120d49fad818c08719bbbea9a60f88">sgs::strat::processBlocksStratRandom</a> (int numSamples, int numStrata, <a class="el" href="structsgs_1_1helper_1_1RasterBandMetaData.html">helper::RasterBandMetaData</a> &amp;band, <a class="el" href="structsgs_1_1access_1_1Access.html">access::Access</a> &amp;access, <a class="el" href="structsgs_1_1existing_1_1Existing.html">existing::Existing</a> &amp;existing, <a class="el" href="classsgs_1_1strat_1_1IndexStorageVectors.html">IndexStorageVectors</a> &amp;indices, std::vector&lt; std::vector&lt; OGRPoint &gt; &gt; &amp;existingSamples, uint64_t multiplier, xso::xoshiro_4x64_plus &amp;rng, std::string allocation, <a class="el" href="structsgs_1_1strat_1_1OptimAllocationDataManager.html">OptimAllocationDataManager</a> &amp;optim, std::vector&lt; double &gt; weights, int width, int height)</td></tr>
 <tr class="memitem:ga403d17022991838519ee8e759ee1eb78" id="r_ga403d17022991838519ee8e759ee1eb78"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ga403d17022991838519ee8e759ee1eb78 template"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga403d17022991838519ee8e759ee1eb78">sgs::strat::processBlocksStratQueinnec</a> (int numSamples, int numStrata, <a class="el" href="structsgs_1_1helper_1_1RasterBandMetaData.html">helper::RasterBandMetaData</a> &amp;band, <a class="el" href="structsgs_1_1access_1_1Access.html">access::Access</a> &amp;access, <a class="el" href="structsgs_1_1existing_1_1Existing.html">existing::Existing</a> &amp;existing, <a class="el" href="classsgs_1_1strat_1_1IndexStorageVectors.html">IndexStorageVectors</a> &amp;indices, <a class="el" href="classsgs_1_1strat_1_1IndexStorageVectors.html">IndexStorageVectors</a> &amp;queinnecIndices, <a class="el" href="structsgs_1_1strat_1_1FocalWindow.html">FocalWindow</a> &amp;fw, std::vector&lt; std::vector&lt; OGRPoint &gt; &gt; &amp;existingSamples, uint64_t multiplier, uint64_t queinnecMultiplier, xso::xoshiro_4x64_plus &amp;rng, std::string allocation, <a class="el" href="structsgs_1_1strat_1_1OptimAllocationDataManager.html">OptimAllocationDataManager</a> &amp;optim, std::vector&lt; double &gt; weights, int width, int height)</td></tr>
-<tr class="memitem:ga80c5a7f87d4be0c7434af3bdad5c397d" id="r_ga80c5a7f87d4be0c7434af3bdad5c397d"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga80c5a7f87d4be0c7434af3bdad5c397d">sgs::strat::strat</a> (<a class="el" href="classsgs_1_1raster_1_1GDALRasterWrapper.html">raster::GDALRasterWrapper</a> *p_raster, int bandNum, int64_t numSamples, int64_t numStrata, std::string allocation, std::vector&lt; double &gt; weights, <a class="el" href="classsgs_1_1raster_1_1GDALRasterWrapper.html">raster::GDALRasterWrapper</a> *p_mraster, int mrastBandNum, std::string method, int wrow, int wcol, double mindist, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *p_existing, bool force, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *p_access, std::string layerName, double buffInner, double buffOuter, std::vector&lt; std::pair&lt; std::string, int &gt; &gt; mapStratMapping, bool plot, std::string filename, std::string tempFolder)</td></tr>
+<tr class="memitem:gacf6e81272028486bb737a44e85f70a75" id="r_gacf6e81272028486bb737a44e85f70a75"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf6e81272028486bb737a44e85f70a75">sgs::strat::strat</a> (<a class="el" href="classsgs_1_1raster_1_1GDALRasterWrapper.html">raster::GDALRasterWrapper</a> *p_raster, int bandNum, int64_t numSamples, int64_t numStrata, std::string allocation, std::vector&lt; double &gt; weights, <a class="el" href="classsgs_1_1raster_1_1GDALRasterWrapper.html">raster::GDALRasterWrapper</a> *p_mraster, int mrastBandNum, std::string method, int wrow, int wcol, double mindist, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *p_existing, bool force, <a class="el" href="classsgs_1_1vector_1_1GDALVectorWrapper.html">vector::GDALVectorWrapper</a> *p_access, std::string layerName, double buffInner, double buffOuter, std::vector&lt; std::pair&lt; std::string, int &gt; &gt; mapStratMapping, bool plot, std::string filename, std::string tempFolder, uint64_t random_state)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -154,6 +156,45 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;size_t&gt; counts of each stratum </dd></dl>
+
+</div>
+</div>
+<a id="ga41ae47477f1d2286aa3d281046503803" name="ga41ae47477f1d2286aa3d281046503803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41ae47477f1d2286aa3d281046503803">&#9670;&#160;</a></span>checkStrataValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sgs::strat::checkStrataValue </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numStrata</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Throws if a (non-nodata) strat raster value is outside of [0, numStrata).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>val </td></tr>
+    <tr><td class="paramname">int</td><td>numStrata </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -421,8 +462,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="ga80c5a7f87d4be0c7434af3bdad5c397d" name="ga80c5a7f87d4be0c7434af3bdad5c397d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga80c5a7f87d4be0c7434af3bdad5c397d">&#9670;&#160;</a></span>strat()</h2>
+<a id="gacf6e81272028486bb737a44e85f70a75" name="gacf6e81272028486bb737a44e85f70a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf6e81272028486bb737a44e85f70a75">&#9670;&#160;</a></span>strat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +576,12 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>tempFolder</em></span>&#160;)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>tempFolder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>random_state</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -5,10 +5,9 @@ var searchData=
   ['variances_2',['variances',['../structsgs_1_1strat_1_1OptimAllocationDataManager.html#a899e3ac5d8a80ef4c4633884aaeb8f7d',1,'sgs::strat::OptimAllocationDataManager']]],
   ['vector_3',['vector',['../group__vector.html',1,'']]],
   ['vector_20data_4',['raster and vector data',['../index.html#autotoc_md5',1,'']]],
-  ['vector_2ecpp_5',['vector.cpp',['../vector_8cpp.html',1,'']]],
-  ['vector_2eh_6',['vector.h',['../vector_8h.html',1,'']]],
-  ['vector_2epy_7',['vector.py',['../vector_8py.html',1,'']]],
-  ['vendored_5ffiles_8',['vendored_files',['../namespacesgspy.html#ad045c5405fbe590c99c7475ff31dcd87',1,'sgspy']]],
-  ['vpad_9',['vpad',['../structsgs_1_1strat_1_1FocalWindow.html#a5cb77aaa9d47332e3e0b9b4027ee8d9d',1,'sgs::strat::FocalWindow']]],
-  ['vrtbanddatasetinfo_10',['VRTBandDatasetInfo',['../structsgs_1_1helper_1_1VRTBandDatasetInfo.html',1,'sgs::helper']]]
+  ['vector_2eh_5',['vector.h',['../vector_8h.html',1,'']]],
+  ['vector_2epy_6',['vector.py',['../vector_8py.html',1,'']]],
+  ['vendored_5ffiles_7',['vendored_files',['../namespacesgspy.html#ad045c5405fbe590c99c7475ff31dcd87',1,'sgspy']]],
+  ['vpad_8',['vpad',['../structsgs_1_1strat_1_1FocalWindow.html#a5cb77aaa9d47332e3e0b9b4027ee8d9d',1,'sgs::strat::FocalWindow']]],
+  ['vrtbanddatasetinfo_9',['VRTBandDatasetInfo',['../structsgs_1_1helper_1_1VRTBandDatasetInfo.html',1,'sgs::helper']]]
 ];

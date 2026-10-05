@@ -35,7 +35,7 @@ var searchData=
   ['getpointsaswkt_32',['getPointsAsWkt',['../classsgs_1_1vector_1_1GDALVectorWrapper.html#a1724d6afcdad3d70e3467b7b127091eb',1,'sgs::vector::GDALVectorWrapper']]],
   ['getprobabilitymultiplier_33',['getProbabilityMultiplier',['../group__helper.html#ga0d0279d6c6a0e14e9f14d56681b59c8c',1,'sgs::helper']]],
   ['getquantile_34',['getQuantile',['../group__clhs.html#ga0786fa3220971b7f94ad2c7942ffaaeb',1,'sgs::clhs']]],
-  ['getrandomindices_35',['getRandomIndices',['../group__srs.html#ga0513a0c16d42ad506c10b871c3fb3b9f',1,'sgs::srs']]],
+  ['getrandomindices_35',['getRandomIndices',['../group__srs.html#ga5a229c1fd9399c34ef9ea20561c826ff',1,'sgs::srs']]],
   ['getrandompoint_36',['getRandomPoint',['../classsgs_1_1clhs_1_1CLHSDataManager.html#aae08fa88daa37f3590dfeb037a7124ac',1,'sgs::clhs::CLHSDataManager']]],
   ['getrasterband_37',['getRasterBand',['../classsgs_1_1raster_1_1GDALRasterWrapper.html#aa4cf8f6b34b0816b769daeabab00b3bf',1,'sgs::raster::GDALRasterWrapper']]],
   ['getrasterbandasmemview_38',['getRasterBandAsMemView',['../classsgs_1_1raster_1_1GDALRasterWrapper.html#a55c7a7731614eeb8f7dcdc6aa9f2455a',1,'sgs::raster::GDALRasterWrapper']]],
