@@ -134,7 +134,8 @@ PYBIND11_MODULE(_sgs, m) {
 		pybind11::arg("replace"),
 		pybind11::arg("plot"),
 		pybind11::arg("tempFolder"),
-		pybind11::arg("filename"));
+		pybind11::arg("filename"),
+        pybind11::arg("random_state"));
 
 	// source code in sgspy/sample/srs/srs.h
 	m.def("srs_cpp", &sgs::srs::srs, pybind11::call_guard<pybind11::gil_scoped_release>(),

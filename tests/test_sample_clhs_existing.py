@@ -10,6 +10,11 @@ from files import (
 )
 
 
+def points(xs, ys):
+    crs = gpd.read_file(access_shapefile_path).crs
+    return sgs.SpatialVector.from_geopandas(gpd.GeoDataFrame(geometry=gpd.points_from_xy(xs, ys), crs=crs))
+
+
 class TestClhsExisting:
     rast = sgs.SpatialRaster(mraster_geotiff_path)
 
@@ -47,4 +52,15 @@ class TestClhsExisting:
     def test_more_existing_than_num_samples(self):
         existing = sgs.SpatialVector(existing_shapefile_path) #200 points
         samples = sgs.clhs(self.rast, num_samples=50, existing=existing)
-        assert len(samples.samples_as_wkt()) >= 50
+        assert len(samples.samples_as_wkt()) == 200
+
+    def test_existing_on_nan_or_shared_pixel_is_dropped(self):
+        #existing.h keeps one point per pixel; readRaster only adds it if the pixel is valid
+        valid = np.all([~np.isnan(self.rast.band(b)) for b in self.rast.bands], axis=0)
+        (nr, nc), (vr, vc) = np.argwhere(~valid)[0], np.argwhere(valid)[0]
+        off = np.array([.5, .5, .25])
+        xs = self.rast.xmin + (np.array([nc, vc, vc]) + off) * self.rast.pixel_width
+        ys = self.rast.ymax - (np.array([nr, vr, vr]) + off) * self.rast.pixel_height
+        samples = sgs.clhs(self.rast, 10, existing=points(xs, ys)).to_geopandas()
+        assert (samples['existing'] == 1).sum() == 1
+        assert len(samples) == 10

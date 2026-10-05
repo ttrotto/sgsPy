@@ -24,3 +24,8 @@ class TestSeeded:
         run = lambda seed: sorted(sgs.systematic(self.rast, cellsize=100, random_state=seed).samples_as_wkt())
         assert run(11) == run(11)
         assert run(11) != run(12)
+
+    def test_random_state_is_reproducible_clhs(self):
+        run = lambda seed: sorted(sgs.clhs(self.rast, num_samples=50, random_state=seed).samples_as_wkt())
+        assert run(13) == run(13)
+        assert run(13) != run(14)

@@ -1054,7 +1054,8 @@ clhs(
 	size_t replace,
 	bool plot,
 	std::string tempFolder,
-	std::string filename)
+	std::string filename,
+	uint64_t random_state)
 {
 	GDALAllRegister();
 
@@ -1116,7 +1117,7 @@ clhs(
 
 	//fast random number generator using xoshiro256++
 	//https://vigna.di.unimi.it/ftp/papers/ScrambledLinear.pdf
-	xso::xoshiro_4x64_plus rng;
+	xso::xoshiro_4x64_plus rng(random_state);
 	uint64_t multiplier = helper::getProbabilityMultiplier(
 		width, 
 		height, 
